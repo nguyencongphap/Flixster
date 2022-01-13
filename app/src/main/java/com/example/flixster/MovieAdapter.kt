@@ -1,6 +1,7 @@
 package com.example.flixster
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,6 +24,7 @@ class MovieAdapter(private val context: Context, private val movies: List<Movie>
     // Create a view holder of type ViewHolder that we defined below and return it
     // This is an Expensive operation
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        Log.i(TAG, "onCreateViewHolder")
         // Get an instance of LayoutInflater from "context" and then inflate a layout
         // R.layout.item_movie is the individual row layout we define in item_movie.xml
         // to hold an individual movie info
@@ -37,6 +39,7 @@ class MovieAdapter(private val context: Context, private val movies: List<Movie>
     // bind it to the ViewHolder
     // This is a Cheap operation
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        Log.i(TAG, "onBindViewHolder position $position")
         val movie = movies[position]
         holder.bind(movie)
     }
